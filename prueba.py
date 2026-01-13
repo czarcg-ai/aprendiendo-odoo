@@ -1,3 +1,4 @@
+import time
 class personaje:
     
     # 1. Constructor: Corregimos 'Nombre' a 'nombre' (minúsculas)
@@ -9,16 +10,17 @@ class personaje:
     def Coñazo(self):
         self.vida = self.vida - 10
         # El print debe estar indentado (metido) aquí adentro
-        print(f"{self.nombre} recibió un golpe. Vida restante: {self.vida}")
+        print(f"{self.nombre} recibió un misilazo. Vida restante: {self.vida}")
 
 # --- ZONA DE EJECUCIÓN ---
-
 # Creamos al primer personaje usando el molde 'personaje'
-mi_personaje = personaje("Maduro cds", 1000)
-
+hp1 = personaje("Maduro cds", 100)
 # Creamos al SEGUNDO personaje usando EL MISMO molde 'personaje'
 # (Solo cambiamos el nombre de la variable a la izquierda)
-mi_personaje2 = personaje("Diosdi hp", 1000)
-
-# Golpeamos al segundo personaje
-mi_personaje.Coñazo()
+hp2 = personaje("Diosdi hp", 100)
+hp1.Coñazo()
+print(f"¡misilazos pa miraflores {hp1.nombre}!")
+while hp1.vida > 0:
+    hp1.Coñazo()  
+    time.sleep(1)
+print("cayeron manooo")
